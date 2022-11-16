@@ -1,0 +1,14 @@
+<% for(let i = 0; i < players.length; i++) { %>
+    <tr>
+        <td><%= i + 1 %></td>
+        <td><%= players[i].name %></td>
+        <td><%= players[i].national %></td>
+        <td><%= players[i].jersay_no %></td>
+        <td><%= players[i].playing_club %></td>
+        <td>
+            <a href="#" class="btn btn-light btn-small"><i class="bi bi-eye me-1"></i>View</a>
+            <a href="/player/editPlayer/<%= players[i].player_id %>" class="btn btn-light btn-small"><i class="bi bi-pencil me-1"></i>Edit</a>
+            <a href="/player/<%= players[i].player_id %>" class="btn btn-light btn-small"><i class="bi bi-person-x me-1"></i>Delete</a>
+        </td>
+    </tr>
+<% } %>

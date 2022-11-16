@@ -1,0 +1,55 @@
+<%- include('include/_header') %>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/player">USER MANAGEMENT SYSTEM</a>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/player">Home</a>
+                    </li>
+                </ul>
+
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 player__form">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/player" class="text-decoration-none link-success fw-bold">Home</a>
+                </li>
+                <li class="breadcrumb-item active">Edit Player</li>
+            </ol>
+        </nav>
+
+        <form action="/player/editPlayer/<%= dataPlayer.player_id %>" method="POST">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label ">Name</label>
+                <input type="text" class="form-control shadow-sm" name="name" value="<%=dataPlayer.name%>">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">National</label>
+                <input type="text" class="form-control shadow-sm" name="national" value="<%=dataPlayer.national%>">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Jersay_no</label>
+                <input type="text" class="form-control shadow-sm" name="jersay_no" value="<%=dataPlayer.jersay_no%>">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Playing_club</label>
+                <input type="text" class="form-control shadow-sm" name="playing_club"
+                    value="<%=dataPlayer.playing_club%>">
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+
+    </div>
+
+ <%- include('include/_footer') %>

@@ -1,0 +1,51 @@
+<%- include('include/_header') %>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/player">USER MANAGEMENT SYSTEM </a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="/player">Home</a>
+          </li>
+        </ul>
+
+        <form class="d-flex" action="/player/find-player" method="POST">
+          <input class="form-control me-2" type="search" placeholder="Search" name="search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
+      </div>
+    </div>
+  </nav>
+
+    <div class="container pt-4 pb-4 player__home">
+        <div class="box-nav d-flex justify-between">
+          <a href="/player/add-player" class="border-shadow pb-4">
+            <span class="text-gradient btn btn-success">Add Player</span>
+          </a>
+        </div>
+
+        <table class="table table-bordered">
+            <thead class="bg-secondary text-center">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Nationality</th>
+                  <th scope="col">Jersay_no</th>
+                  <th scope="col">Playing_club</th>
+                  <th scope="col">Action</th>
+                </tr>
+            </thead>
+
+          <tbody class="text-center">
+
+              <%- include('include/_show') %>
+
+           </tbody>
+
+        </table>
+
+    </div>
+
+<%- include('include/_footer') %>
